@@ -1,0 +1,62 @@
+{
+    "name": "my-t3-app",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "postinstall": "prisma generate && cp .gitignore .prettierignore",
+        "db:push": "prisma db push",
+        "build": "next build",
+        "dev": "next dev",
+        "lint": "next lint",
+        "start": "next start",
+        "prepare": "husky install"
+    },
+    "dependencies": {
+        "@next-auth/prisma-adapter": "^1.0.4",
+        "@prisma/client": "^4.5.0",
+        "@tanstack/react-query": "^4.10.0",
+        "@trpc/client": "10.0.0-rc.0",
+        "@trpc/next": "10.0.0-rc.0",
+        "@trpc/react-query": "10.0.0-rc.0",
+        "@trpc/server": "10.0.0-rc.0",
+        "next": "12.3.1",
+        "next-auth": "^4.15.0",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "superjson": "1.9.1",
+        "zod": "^3.18.0"
+    },
+    "devDependencies": {
+        "@tsconfig/next": "^1.0.3",
+        "@types/node": "18.0.0",
+        "@types/prettier": "^2.7.1",
+        "@types/react": "18.0.14",
+        "@types/react-dom": "18.0.5",
+        "@typescript-eslint/eslint-plugin": "^5.33.0",
+        "@typescript-eslint/parser": "^5.33.0",
+        "autoprefixer": "^10.4.7",
+        "eslint": "8.22.0",
+        "eslint-config-next": "12.3.1",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-no-relative-import-paths": "^1.4.0",
+        "eslint-plugin-react": "^7.31.10",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "husky": ">=6",
+        "lint-staged": ">=10",
+        "postcss": "^8.4.14",
+        "prettier": "^2.7.1",
+        "prettier-plugin-organize-imports": "^3.1.1",
+        "prettier-plugin-prisma": "^4.4.0",
+        "prettier-plugin-tailwindcss": "^0.1.13",
+        "prisma": "^4.5.0",
+        "tailwindcss": "^3.2.0",
+        "typescript": "^4.8.4"
+    },
+    "ct3aMetadata": {
+        "initVersion": "6.5.2"
+    },
+    "lint-staged": {
+        "*.{mjs,cjs,ts,tsx}": "eslint --cache --fix",
+        "*.{mjs,cjs,ts,tsx,prisma,css,md}": "prettier --write"
+    }
+}
