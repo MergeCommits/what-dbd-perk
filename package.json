@@ -1,10 +1,12 @@
 {
-    "name": "my-t3-app",
+    "name": "what-dbd-perk",
     "version": "0.1.0",
-    "private": true,
+    "license": "Among us",
     "scripts": {
         "postinstall": "prisma generate && cp .gitignore .prettierignore",
+        "db:connect": "pscale connect what-dbd-perk main --port 3309 --org merge-conflicts",
         "db:push": "prisma db push",
+        "db:studio": "prisma studio",
         "build": "next build",
         "dev": "next dev",
         "lint": "next lint",
