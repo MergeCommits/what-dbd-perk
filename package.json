@@ -1,7 +1,7 @@
 {
     "name": "what-dbd-perk",
     "version": "0.1.0",
-    "license": "zlib",
+    "license": "Zlib",
     "scripts": {
         "postinstall": "prisma generate && cp .gitignore .prettierignore",
         "db:connect": "pscale connect what-dbd-perk main --port 3309 --org merge-conflicts",
