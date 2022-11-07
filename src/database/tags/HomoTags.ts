@@ -18,4 +18,5 @@ export const homoTags = [
     ["fire", "flame"],
     ["gate", "exit gate"],
     ["blood", "bleeding"],
+    ["bandage", "bandaid"],
 ];
