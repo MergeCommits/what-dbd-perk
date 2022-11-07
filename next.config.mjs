@@ -14,5 +14,8 @@ const config = {
         locales: ["en"],
         defaultLocale: "en",
     },
+    images: {
+        domains: ["static.wikia.nocookie.net"],
+    },
 };
 export default config;

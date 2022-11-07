@@ -5,7 +5,9 @@ import { survivorPerks } from "database/perks/SurvivorPerks";
 import { allTags } from "database/tags/builder";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
+import type { FC } from "react";
 import { useState } from "react";
 
 type Props = {
@@ -30,28 +32,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
 const Home: NextPage<Props> = (props) => {
     const router = useRouter();
 
-    const [selectedPerson, setSelectedPerson] = useState("");
-    const [query, setQuery] = useState("");
-
-    const filteredTags =
-        query === ""
-            ? allTags
-            : allTags.filter((tag) => {
-                  return tag.toLowerCase().includes(query.toLowerCase());
-              });
-
-    const perks = [...survivorPerks, ...killerPerks].map((perk) => ({
-        ...perk,
-        tags: perk.tags.split(","),
-    }));
-
-    // check if perks contains any selected tags exclusively
-    const filteredPerks = perks.filter((perk) => {
-        return props.selectedTags.every((tag) => perk.tags.includes(tag));
-    });
-
     const removeTag = async (tag: string) => {
-        // reload page with new query
         const newTags = props.selectedTags.filter((t) => t !== tag);
         await router.push({
             pathname: "/",
@@ -91,21 +72,7 @@ const Home: NextPage<Props> = (props) => {
                             "Enter a tag associated with the icon (face, person, skull, ect.) to find the perk."
                         }
                     </p>
-                    <Combobox
-                        value={selectedPerson}
-                        onChange={setSelectedPerson}
-                    >
-                        <Combobox.Input
-                            onChange={(event) => setQuery(event.target.value)}
-                        />
-                        <Combobox.Options>
-                            {filteredTags.map((person) => (
-                                <Combobox.Option key={person} value={person}>
-                                    {person}
-                                </Combobox.Option>
-                            ))}
-                        </Combobox.Options>
-                    </Combobox>
+                    <TagSearch selectedTags={props.selectedTags} />
                     <div className={"flex flex-wrap gap-2"}>
                         {props.selectedTags.map((tag) => (
                             <Chip
@@ -115,22 +82,87 @@ const Home: NextPage<Props> = (props) => {
                             />
                         ))}
                     </div>
-                    <div className={"grid grid-cols-2 gap-4"}>
-                        {filteredPerks.map((perk) => (
-                            <div
-                                key={perk.name}
-                                className={
-                                    "flex flex-col items-center justify-center rounded-lg bg-gray-700 p-4"
-                                }
-                            >
-                                {perk.name}
-                                <img src={perk.icon} />
-                            </div>
-                        ))}
-                    </div>
+                    <PerkResults tags={props.selectedTags} />
                 </main>
             </div>
         </>
+    );
+};
+
+type TagSearchProps = {
+    selectedTags: string[];
+};
+
+const TagSearch: FC<TagSearchProps> = (props) => {
+    const router = useRouter();
+
+    const [query, setQuery] = useState("");
+    const [selectedTag] = useState("");
+
+    const filteredTags =
+        query === ""
+            ? allTags
+            : allTags.filter((tag) => {
+                  return tag.toLowerCase().includes(query.toLowerCase());
+              });
+
+    const addTag = async (tag: string) => {
+        const newTags = [...props.selectedTags, tag];
+        await router.push({
+            pathname: "/",
+            query: {
+                tags: newTags.join(","),
+            },
+        });
+    };
+
+    return (
+        <Combobox value={selectedTag} onChange={addTag}>
+            <Combobox.Input
+                onChange={(event) => setQuery(event.target.value)}
+            />
+            <Combobox.Options>
+                {filteredTags.map((tag) => (
+                    <Combobox.Option key={tag} value={tag}>
+                        {tag}
+                    </Combobox.Option>
+                ))}
+            </Combobox.Options>
+        </Combobox>
+    );
+};
+
+type PerkResultsProps = {
+    tags: string[];
+};
+
+const PerkResults: FC<PerkResultsProps> = (props) => {
+    const perks = [...survivorPerks, ...killerPerks].map((perk) => ({
+        ...perk,
+        tags: perk.tags.split(","),
+    }));
+
+    const filteredPerks = perks.filter((perk) => {
+        return props.tags.every((tag) => perk.tags.includes(tag));
+    });
+
+    return (
+        <div className={"flex flex-col"}>
+            {filteredPerks.map((perk) => (
+                <div key={perk.name} className={"flex"}>
+                    <div className={"flex flex-col"}>
+                        <h1>{perk.name}</h1>
+                        <Image
+                            src={perk.icon}
+                            alt={`icon of the perk called ${perk.name}`}
+                            width={64}
+                            height={64}
+                        />
+                    </div>
+                    <p>{perk.description}</p>
+                </div>
+            ))}
+        </div>
     );
 };
 
