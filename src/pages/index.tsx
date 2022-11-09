@@ -1,8 +1,7 @@
 import { Combobox } from "@headlessui/react";
 import Chip from "components/Chip";
+import { fetchPerks } from "database/perks/fetchData";
 import type { DBDPerk } from "database/perks/getAllPerks";
-import { getAllPerks } from "database/perks/getAllPerks";
-import { fetchPerkDescription } from "database/perks/getPerkDescription";
 import { allTags } from "database/tags/builder";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
@@ -26,28 +25,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async (
             ? context.query.tags.split(",")
             : context.query.tags;
 
-    const fetchPerks = async () => {
-        if (tags.length < 1) {
-            return [];
-        }
-
-        const perks = getAllPerks();
-        const filteredPerks = perks.filter((perk) => {
-            return tags.every((tag) => perk.tags.includes(tag));
-        });
-
-        const promises = filteredPerks.map(async (perk) => ({
-            ...perk,
-            description: await fetchPerkDescription(perk.name),
-        }));
-
-        return await Promise.all(promises);
-    };
-
     return {
         props: {
             selectedTags: tags,
-            perks: await fetchPerks(),
+            perks: await fetchPerks(tags),
         },
     };
 };

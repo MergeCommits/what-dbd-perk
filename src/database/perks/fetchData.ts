@@ -1,3 +1,4 @@
+import { getAllPerks } from "database/perks/getAllPerks";
 import { parse } from "node-html-parser";
 
 export async function fetchPerkDescription(name: string) {
@@ -17,4 +18,22 @@ export async function fetchPerkDescription(name: string) {
     );
 
     return test.querySelector(".formattedPerkDesc")?.innerHTML ?? "";
+}
+
+export async function fetchPerks(tags: string[]) {
+    if (tags.length < 1) {
+        return [];
+    }
+
+    const perks = getAllPerks();
+    const filteredPerks = perks.filter((perk) => {
+        return tags.every((tag) => perk.tags.includes(tag));
+    });
+
+    const promises = filteredPerks.map(async (perk) => ({
+        ...perk,
+        description: await fetchPerkDescription(perk.name),
+    }));
+
+    return await Promise.all(promises);
 }
