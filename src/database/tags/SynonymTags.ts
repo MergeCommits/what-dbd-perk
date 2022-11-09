@@ -1,4 +1,4 @@
-export const homoTags = [
+export const synonymTags = [
     ["foot", "feet", "boot"],
     ["person", "people"],
     ["syringe", "injection", "needle"],

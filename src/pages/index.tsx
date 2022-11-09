@@ -1,7 +1,6 @@
 import { Combobox } from "@headlessui/react";
 import Chip from "components/Chip";
-import { killerPerks } from "database/perks/KillerPerks";
-import { survivorPerks } from "database/perks/SurvivorPerks";
+import { getAllPerks } from "database/perks/getAllPerks";
 import { allTags } from "database/tags/builder";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
@@ -137,11 +136,11 @@ type PerkResultsProps = {
 };
 
 const PerkResults: FC<PerkResultsProps> = (props) => {
-    const perks = [...survivorPerks, ...killerPerks].map((perk) => ({
-        ...perk,
-        tags: perk.tags.split(","),
-    }));
+    if (props.tags.length === 0) {
+        return null;
+    }
 
+    const perks = getAllPerks();
     const filteredPerks = perks.filter((perk) => {
         return props.tags.every((tag) => perk.tags.includes(tag));
     });
