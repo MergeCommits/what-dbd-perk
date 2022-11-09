@@ -1,6 +1,8 @@
 import { Combobox } from "@headlessui/react";
 import Chip from "components/Chip";
+import type { DBDPerk } from "database/perks/getAllPerks";
 import { getAllPerks } from "database/perks/getAllPerks";
+import { fetchPerkDescription } from "database/perks/getPerkDescription";
 import { allTags } from "database/tags/builder";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
@@ -11,19 +13,41 @@ import { useState } from "react";
 
 type Props = {
     selectedTags: string[];
+    perks: DBDPerk[];
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async (
     context
 ) => {
+    const tags =
+        context.query.tags === undefined
+            ? []
+            : typeof context.query.tags === "string"
+            ? context.query.tags.split(",")
+            : context.query.tags;
+
+    const fetchPerks = async () => {
+        if (tags.length < 1) {
+            return [];
+        }
+
+        const perks = getAllPerks();
+        const filteredPerks = perks.filter((perk) => {
+            return tags.every((tag) => perk.tags.includes(tag));
+        });
+
+        const promises = filteredPerks.map(async (perk) => ({
+            ...perk,
+            description: await fetchPerkDescription(perk.name),
+        }));
+
+        return await Promise.all(promises);
+    };
+
     return {
         props: {
-            selectedTags:
-                context.query.tags === undefined
-                    ? []
-                    : typeof context.query.tags === "string"
-                    ? context.query.tags.split(",")
-                    : context.query.tags,
+            selectedTags: tags,
+            perks: await fetchPerks(),
         },
     };
 };
@@ -35,9 +59,7 @@ const Home: NextPage<Props> = (props) => {
         const newTags = props.selectedTags.filter((t) => t !== tag);
         await router.push({
             pathname: "/",
-            query: {
-                tags: newTags.join(","),
-            },
+            query: newTags.length > 0 ? { tags: newTags } : null,
         });
     };
 
@@ -81,7 +103,7 @@ const Home: NextPage<Props> = (props) => {
                             />
                         ))}
                     </div>
-                    <PerkResults tags={props.selectedTags} />
+                    <PerkResults perks={props.perks} />
                 </main>
             </div>
         </>
@@ -132,33 +154,30 @@ const TagSearch: FC<TagSearchProps> = (props) => {
 };
 
 type PerkResultsProps = {
-    tags: string[];
+    perks: DBDPerk[];
 };
 
 const PerkResults: FC<PerkResultsProps> = (props) => {
-    if (props.tags.length === 0) {
-        return null;
-    }
-
-    const perks = getAllPerks();
-    const filteredPerks = perks.filter((perk) => {
-        return props.tags.every((tag) => perk.tags.includes(tag));
-    });
-
     return (
-        <div className={"flex flex-col"}>
-            {filteredPerks.map((perk) => (
-                <div key={perk.name} className={"flex"}>
-                    <div className={"flex flex-col"}>
+        <div className={"flex flex-col text-gray-200"}>
+            {props.perks.map((perk) => (
+                <div key={perk.name} className={"flex border p-4"}>
+                    <div
+                        className={
+                            "flex min-w-[200px] flex-col items-center justify-center px-4"
+                        }
+                    >
                         <h1>{perk.name}</h1>
                         <Image
                             src={perk.icon}
                             alt={`icon of the perk called ${perk.name}`}
-                            width={64}
-                            height={64}
+                            width={128}
+                            height={128}
                         />
                     </div>
-                    <p>{perk.description}</p>
+                    <div
+                        dangerouslySetInnerHTML={{ __html: perk.description }}
+                    />
                 </div>
             ))}
         </div>
