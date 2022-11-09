@@ -4,6 +4,7 @@ import { synonymTags } from "database/tags/SynonymTags";
 
 export type DBDPerk = Omit<typeof survivorPerks[0], "tags"> & {
     tags: string[];
+    description: string;
 };
 
 export function getAllPerks() {
@@ -46,7 +47,7 @@ function getSurvivorPerks() {
     });
 }
 
-function convertTagsStringToArray(perk: typeof survivorPerks[0]): DBDPerk {
+function convertTagsStringToArray(perk: typeof survivorPerks[0]) {
     const tags = perk.tags
         .split(",")
         .map((tag) => {
