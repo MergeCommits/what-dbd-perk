@@ -17,6 +17,10 @@ export async function fetchPerkDescription(name: string) {
         e.removeAttribute("class")
     );
 
+    test.querySelectorAll("ul").forEach((e) =>
+        e.setAttribute("class", "list-disc ml-4")
+    );
+
     return test.querySelector(".formattedPerkDesc")?.innerHTML ?? "";
 }
 

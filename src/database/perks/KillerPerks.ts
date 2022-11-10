@@ -162,7 +162,7 @@ export const killerPerks = [
         tags: "eye,health,skull,symbol",
     },
     {
-        name: "Save The Best for Last",
+        name: "Save the Best for Last",
         code: "savethebestforlast",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/6/6a/IconPerks_saveTheBestForLast.png",
         tags: "person,skull,face,scream",

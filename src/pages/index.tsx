@@ -56,7 +56,7 @@ const Home: NextPage<Props> = (props) => {
                 />
                 <link rel={"icon"} href={"/public/favicon.ico"} />
             </Head>
-            <div className={"min-h-screen bg-slate-900"}>
+            <div className={"min-h-screen bg-stone-900"}>
                 <main
                     className={
                         "container mx-auto flex flex-col items-center justify-center p-4"
@@ -64,12 +64,12 @@ const Home: NextPage<Props> = (props) => {
                 >
                     <h1
                         className={
-                            "text-3xl font-extrabold leading-normal text-gray-700"
+                            "text-3xl font-extrabold leading-normal text-yellow-900"
                         }
                     >
                         {"Which Dead by Daylight perk is this?"}
                     </h1>
-                    <p className={"text-2xl text-gray-700"}>
+                    <p className={"text-2xl text-yellow-900"}>
                         {
                             "Enter a tag associated with the icon (face, person, skull, ect.) to find the perk."
                         }
@@ -140,15 +140,21 @@ type PerkResultsProps = {
 
 const PerkResults: FC<PerkResultsProps> = (props) => {
     return (
-        <div className={"flex flex-col text-gray-200"}>
+        <div
+            className={
+                "flex flex-col bg-black text-sm leading-7 text-perkDescription"
+            }
+        >
             {props.perks.map((perk) => (
-                <div key={perk.name} className={"flex border p-4"}>
+                <div key={perk.name} className={"flex border p-4 pl-0"}>
                     <div
                         className={
-                            "flex min-w-[200px] flex-col items-center justify-center px-4"
+                            "flex shrink-0 basis-48 flex-col items-center justify-center px-4"
                         }
                     >
-                        <h1>{perk.name}</h1>
+                        <h1 className={"text-center font-bold text-slate-100"}>
+                            {perk.name}
+                        </h1>
                         <Image
                             src={perk.icon}
                             alt={`icon of the perk called ${perk.name}`}
