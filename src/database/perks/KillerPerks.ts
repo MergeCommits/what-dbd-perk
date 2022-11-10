@@ -581,4 +581,22 @@ export const killerPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/aa/IconPerks_shatteredHope.png",
         tags: "hand",
     },
+    {
+        name: "Superior Anatomy",
+        code: "superioranatomy",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/4/4a/IconPerks_superiorAnatomy.png",
+        tags: "person,vault,window,knife",
+    },
+    {
+        name: "Awakened Awareness",
+        code: "awakenedawareness",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/9/97/IconPerks_awakenedAwareness.png",
+        tags: "person,face,sun glasses",
+    },
+    {
+        name: "Terminus",
+        code: "terminus",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/4/4c/IconPerks_terminus.png",
+        tags: "person,chair",
+    },
 ];

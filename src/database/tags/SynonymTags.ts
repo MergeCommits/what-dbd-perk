@@ -1,5 +1,5 @@
 export const synonymTags = [
-    ["foot", "feet", "boot"],
+    ["foot", "feet", "boot", "shoe"],
     ["person", "people"],
     ["syringe", "injection", "needle"],
     ["pointing", "finger"],

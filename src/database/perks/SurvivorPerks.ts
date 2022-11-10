@@ -641,4 +641,40 @@ export const survivorPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/9/99/IconPerks_overzealous.png",
         tags: "person",
     },
+    {
+        name: "Wiretap",
+        code: "wiretap",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/2/23/IconPerks_wiretap.png",
+        tags: "person,face",
+    },
+    {
+        name: "Reactive Healing",
+        code: "reactivehealing",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5a/IconPerks_reactiveHealing.png",
+        tags: "person,health,bandage",
+    },
+    {
+        name: "Low Profile",
+        code: "lowprofile",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/f/fb/IconPerks_lowProfile.png",
+        tags: "foot,shoe",
+    },
+    {
+        name: "Better than New",
+        code: "betterthannew",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/b/b1/IconPerks_betterThanNew.png",
+        tags: "person,hand",
+    },
+    {
+        name: "Reassurance",
+        code: "reassurance",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5b/IconPerks_reassurance.png",
+        tags: "person,hand,thumb",
+    },
+    {
+        name: "Hyperfocus",
+        code: "hyperfocus",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5d/IconPerks_hyperfocus.png",
+        tags: "person,face",
+    },
 ];
