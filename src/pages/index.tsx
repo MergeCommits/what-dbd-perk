@@ -1,14 +1,12 @@
-import { Combobox } from "@headlessui/react";
 import Chip from "components/Chip";
+import { TagSearchBox } from "components/TagSearchBox";
 import { fetchPerks } from "database/perks/fetchData";
 import type { DBDPerk } from "database/perks/getAllPerks";
-import { allTags } from "database/tags/builder";
 import type { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import type { FC } from "react";
-import { useState } from "react";
 
 type Props = {
     selectedTags: string[];
@@ -74,7 +72,7 @@ const Home: NextPage<Props> = (props) => {
                             "Enter a tag associated with the icon (face, person, skull, ect.) to find the perk."
                         }
                     </p>
-                    <TagSearch selectedTags={props.selectedTags} />
+                    <TagSearchBox />
                     <div className={"flex flex-wrap gap-2"}>
                         {props.selectedTags.map((tag) => (
                             <Chip
@@ -88,49 +86,6 @@ const Home: NextPage<Props> = (props) => {
                 </main>
             </div>
         </>
-    );
-};
-
-type TagSearchProps = {
-    selectedTags: string[];
-};
-
-const TagSearch: FC<TagSearchProps> = (props) => {
-    const router = useRouter();
-
-    const [query, setQuery] = useState("");
-    const [selectedTag] = useState("");
-
-    const filteredTags =
-        query === ""
-            ? allTags
-            : allTags.filter((tag) => {
-                  return tag.toLowerCase().includes(query.toLowerCase());
-              });
-
-    const addTag = async (tag: string) => {
-        const newTags = [...props.selectedTags, tag];
-        await router.push({
-            pathname: "/",
-            query: {
-                tags: newTags.join(","),
-            },
-        });
-    };
-
-    return (
-        <Combobox value={selectedTag} onChange={addTag}>
-            <Combobox.Input
-                onChange={(event) => setQuery(event.target.value)}
-            />
-            <Combobox.Options>
-                {filteredTags.map((tag) => (
-                    <Combobox.Option key={tag} value={tag}>
-                        {tag}
-                    </Combobox.Option>
-                ))}
-            </Combobox.Options>
-        </Combobox>
     );
 };
 
