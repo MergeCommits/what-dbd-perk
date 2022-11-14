@@ -423,7 +423,7 @@ export const survivorPerks = [
         name: "Mettle of Man",
         code: "mettleofman",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/52/IconPerks_mettleOfMan.png",
-        tags: "hand",
+        tags: "hand,fist",
     },
     {
         name: "Lucky Break",

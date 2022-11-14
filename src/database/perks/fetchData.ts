@@ -2,26 +2,31 @@ import { getAllPerks } from "database/perks/getAllPerks";
 import { parse } from "node-html-parser";
 
 export async function fetchPerkDescription(name: string) {
-    const result = await fetch(
+    const wikiPage = await fetch(
         `https://deadbydaylight.fandom.com/wiki/${name.replaceAll(" ", "_")}`
     );
 
-    const text = await result.text();
-    const test = parse(text);
-    test.querySelectorAll("img").forEach((e) => e.remove());
-    test.querySelectorAll("a").forEach((e) => e.replaceWith(e.text));
-    test.querySelectorAll("span:not([class])").forEach((e) =>
-        e.replaceWith(e.text)
-    );
-    test.querySelectorAll("span[class]").forEach((e) =>
-        e.removeAttribute("class")
-    );
+    const body = await wikiPage.text();
+    const perkDescription = parse(body).querySelector(".formattedPerkDesc");
 
-    test.querySelectorAll("ul").forEach((e) =>
-        e.setAttribute("class", "list-disc ml-4")
-    );
+    if (perkDescription === null) {
+        return "";
+    }
 
-    return test.querySelector(".formattedPerkDesc")?.innerHTML ?? "";
+    perkDescription.querySelectorAll("img").forEach((e) => e.remove());
+    perkDescription.querySelectorAll("a").forEach((e) => e.replaceWith(e.text));
+    perkDescription
+        .querySelectorAll("span:not([class])")
+        .forEach((e) => e.replaceWith(e.text));
+    perkDescription
+        .querySelectorAll("span[class]")
+        .forEach((e) => e.removeAttribute("class"));
+
+    perkDescription
+        .querySelectorAll("ul")
+        .forEach((e) => e.setAttribute("class", "list-disc ml-4"));
+
+    return perkDescription.innerHTML;
 }
 
 export async function fetchPerks(tags: string[]) {
