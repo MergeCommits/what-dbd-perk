@@ -29,7 +29,7 @@ export async function fetchPerkDescription(name: string) {
     return perkDescription.innerHTML;
 }
 
-export async function fetchPerks(tags: string[]) {
+export async function fetchPerksFromTags(tags: string[]) {
     if (tags.length < 1) {
         return [];
     }

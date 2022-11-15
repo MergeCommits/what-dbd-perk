@@ -19,4 +19,5 @@ export const synonymTags = [
     ["gate", "exit gate"],
     ["blood", "bleeding"],
     ["bandage", "bandaid"],
+    ["head", "face"],
 ];

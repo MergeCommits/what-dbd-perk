@@ -1,3 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*****
+ react-select in dark mode
+*****/
+div.react-select__control {
+    background-color: #1a202c;
+    border-color: #2d3748;
+    color: #fff;
+}
+
+div.react-select__control:hover {
+    border-color: #4a5568;
+}
+
+div.react-select__control--is-focused {
+    border-color: #4a5568;
+    box-shadow: 0 0 0 1px #4a5568;
+}
+
+div.react-select__menu {
+    background-color: #1a202c;
+}
+
+div.react-select__menu-list {
+    background-color: #1a202c;
+}
+
+div.react-select__option {
+    background-color: #1a202c;
+    color: #fff;
+}
+
+div.react-select__option--is-focused {
+    background-color: #2d3748;
+}
+
+div.react-select__option--is-selected {
+    background-color: #2d3748;
+}
+
+div.react-select__option--is-disabled {
+    color: #718096;
+}
+
+div.react-select__indicator-separator {
+    background-color: #718096;
+}
+
+div.react-select__single-value {
+    color: #fff;
+}
+
+div.react-select__multi-value {
+    background-color: #2d3748;
+}
+
+div.react-select__multi-value__label {
+    color: #fff;
+}
+
+div.react-select__multi-value__remove {
+    color: #fff;
+}
+
+div.react-select__placeholder {
+    color: #718096;
+}
+
+div.react-select__loading-indicator {
+    color: #fff;
+}
+
+div.react-select__loading-indicator svg {
+    fill: #fff;
+}
