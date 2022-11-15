@@ -8,7 +8,7 @@ export type DBDPerk = Omit<typeof survivorPerks[0], "tags"> & {
 };
 
 export function getAllPerks() {
-    return [...getKillerPerks(), ...getSurvivorPerks()];
+    return [...getSurvivorPerks(), ...getKillerPerks()];
 }
 
 function getKillerPerks() {
