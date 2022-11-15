@@ -21,3 +21,15 @@ export const synonymTags = [
     ["bandage", "bandaid"],
     ["head", "face"],
 ];
+
+export const getSynonyms = (tags: string[]) => {
+    const synonyms = [];
+    for (const tag of tags) {
+        for (const synonymTag of synonymTags) {
+            if (synonymTag.includes(tag)) {
+                synonyms.push(...synonymTag);
+            }
+        }
+    }
+    return synonyms;
+};

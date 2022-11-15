@@ -30,9 +30,21 @@ export const PerkResults: FC<Props> = (props) => {
                             height={128}
                         />
                     </div>
-                    <div
-                        dangerouslySetInnerHTML={{ __html: perk.description }}
-                    />
+                    <div className={"flex flex-col"}>
+                        <div
+                            dangerouslySetInnerHTML={{
+                                __html: perk.description,
+                            }}
+                        />
+                        <p className={"mt-auto pt-4 text-slate-400"}>
+                            <strong>
+                                <em>
+                                    {"Tags: "}
+                                    {perk.tags.join(", ")}
+                                </em>
+                            </strong>
+                        </p>
+                    </div>
                 </div>
             ))}
         </div>
