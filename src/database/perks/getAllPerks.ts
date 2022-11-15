@@ -15,7 +15,6 @@ function getKillerPerks() {
     return killerPerks.map(convertTagsStringToArray).map((perk) => {
         const tags = [...perk.tags, "killer"];
 
-        // If perk name starts with Hex: add hex tag
         if (perk.name.startsWith("Hex:")) {
             tags.push("hex");
         }
@@ -35,7 +34,6 @@ function getSurvivorPerks() {
     return survivorPerks.map(convertTagsStringToArray).map((perk) => {
         const tags = [...perk.tags, "survivor"];
 
-        // If perk name starts with Boon: add boon tag
         if (perk.name.startsWith("Boon:")) {
             tags.push("boon");
         }
