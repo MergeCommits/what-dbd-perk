@@ -20,6 +20,7 @@ export const synonymTags = [
     ["blood", "bleeding"],
     ["bandage", "bandaid"],
     ["head", "face"],
+    ["grab", "grabbing", "grasp"],
 ];
 
 export const getSynonyms = (tags: string[]) => {
