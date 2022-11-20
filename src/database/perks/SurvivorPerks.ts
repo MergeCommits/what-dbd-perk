@@ -321,7 +321,7 @@ export const survivorPerks = [
         name: "Tenacity",
         code: "tenacity",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/9/9d/IconPerks_tenacity.png",
-        tags: "person,hand",
+        tags: "person,hand,blood,injury",
     },
     {
         name: "Detective's Hunch",
@@ -417,7 +417,7 @@ export const survivorPerks = [
         name: "Buckle Up",
         code: "buckleup",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/7/74/IconPerks_buckleUp.png",
-        tags: "person,face,hand",
+        tags: "person,face,hand,grab",
     },
     {
         name: "Mettle of Man",
@@ -429,7 +429,7 @@ export const survivorPerks = [
         name: "Lucky Break",
         code: "luckybreak",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/a7/IconPerks_luckyBreak.png",
-        tags: "hand",
+        tags: "hand,grab",
     },
     {
         name: "Any Means Necessary",
