@@ -1,6 +1,8 @@
+const peopleTags = ["person", "people"];
+
 export const synonymTags = [
+    peopleTags,
     ["foot", "feet", "boot", "shoe"],
-    ["person", "people"],
     ["syringe", "injection", "needle"],
     ["pointing", "finger"],
     ["plant", "flower", "nature"],
@@ -21,6 +23,7 @@ export const synonymTags = [
     ["bandage", "bandaid"],
     ["head", "face"],
     ["grab", "grasp"],
+    ["knight", ...peopleTags],
 ];
 
 export const getSynonyms = (tags: string[]) => {

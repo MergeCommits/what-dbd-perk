@@ -677,4 +677,22 @@ export const survivorPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5d/IconPerks_hyperfocus.png",
         tags: "person,face",
     },
+    {
+        name: "Potential Energy",
+        code: "potentialenergy",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/07/IconPerks_potentialEnergy.png",
+        tags: "person,hand,symbol",
+    },
+    {
+        name: "Fogwise",
+        code: "fogwise",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/9/90/IconPerks_fogwise.png",
+        tags: "face,eye",
+    },
+    {
+        name: "Quick Gambit",
+        code: "quickgambit",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/f/f7/IconPerks_quickGambit.png",
+        tags: "person,running",
+    },
 ];

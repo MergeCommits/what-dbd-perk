@@ -599,4 +599,22 @@ export const killerPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/4/4c/IconPerks_terminus.png",
         tags: "person,chair",
     },
+    {
+        name: "Nowhere to Hide",
+        code: "nowheretohide",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/2/29/IconPerks_nowhereToHide.png",
+        tags: "knight,sword",
+    },
+    {
+        name: "Hex: Face the Darkness",
+        code: "hexfacetthedarkness",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/af/IconPerks_hexFaceTheDarkness.png",
+        tags: "knight,sword",
+    },
+    {
+        name: "Hubris",
+        code: "hubris",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/aa/IconPerks_hubris.png",
+        tags: "hand,sword,skull,broken",
+    },
 ];
