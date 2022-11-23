@@ -6,11 +6,15 @@ export async function fetchPerkDescription(name: string) {
         `https://deadbydaylight.fandom.com/wiki/${name.replaceAll(" ", "_")}`
     );
 
+    if (wikiPage.status === 404) {
+        return '<span class="text-red-900">Unable to fetch perk description.</span>';
+    }
+
     const body = await wikiPage.text();
     const perkDescription = parse(body).querySelector(".formattedPerkDesc");
 
     if (perkDescription === null) {
-        return "";
+        return '<span class="text-red-900">Unable to fetch perk description.</span>';
     }
 
     perkDescription.querySelectorAll("img").forEach((e) => e.remove());
