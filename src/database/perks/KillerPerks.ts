@@ -387,7 +387,7 @@ export const killerPerks = [
         name: "Blood Echo",
         code: "bloodecho",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c3/IconPerks_bloodEcho.png",
-        tags: "person,hook",
+        tags: "person,hook,injury",
     },
     {
         name: "Nemesis",
