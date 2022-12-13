@@ -16,7 +16,7 @@ export const TagsAndPerks: FC = () => {
                 setSelectedTags={setSelectedTag}
                 isLoading={result.isLoading}
             />
-            {result.data !== undefined && (
+            {result.data !== undefined && selectedTags.length > 0 && (
                 <PerkResults perks={result.data.perks} />
             )}
         </div>

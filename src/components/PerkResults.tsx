@@ -7,6 +7,16 @@ type Props = {
 };
 
 export const PerkResults: FC<Props> = (props) => {
+    if (props.perks.length < 1) {
+        return (
+            <div className={"flex flex-col"}>
+                <h1 className={"text-center font-bold text-slate-100"}>
+                    {"No perks found"}
+                </h1>
+            </div>
+        );
+    }
+
     return (
         <div
             className={
