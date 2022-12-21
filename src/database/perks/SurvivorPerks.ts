@@ -447,7 +447,7 @@ export const survivorPerks = [
         name: "Off the Record",
         code: "offtherecord",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/9/9e/IconPerks_offTheRecord.png",
-        tags: "hand,broken",
+        tags: "hand,broken,grab",
     },
     {
         name: "Red Herring",
@@ -465,7 +465,7 @@ export const survivorPerks = [
         name: "Soul Guard",
         code: "soulguard",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/a5/IconPerks_soulGuard.png",
-        tags: "hand",
+        tags: "hand,grab",
     },
     {
         name: "Blood Pact",
@@ -501,7 +501,7 @@ export const survivorPerks = [
         name: "Appraisal",
         code: "appraisal",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/c1/IconPerks_appraisal.png",
-        tags: "person,face,hand",
+        tags: "person,face,hand,grab",
     },
     {
         name: "Deception",
@@ -549,7 +549,7 @@ export const survivorPerks = [
         name: "Blast Mine",
         code: "blastmine",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/1c/IconPerks_blastMine.png",
-        tags: "hand",
+        tags: "hand,grab",
     },
     {
         name: "Bite the Bullet",
