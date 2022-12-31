@@ -561,7 +561,7 @@ export const killerPerks = [
         name: "Dissolution",
         code: "dissolution",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/1d/IconPerks_dissolution.png",
-        tags: "foot,broken",
+        tags: "pallet,foot,broken",
     },
     {
         name: "Darkness Revealed",
