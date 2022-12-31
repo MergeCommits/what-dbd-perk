@@ -12,40 +12,44 @@ export function getAllPerks() {
 }
 
 function getKillerPerks() {
-    return killerPerks.map(convertTagsStringToArray).map((perk) => {
-        const tags = [...perk.tags, "killer"];
+    return killerPerks
+        .map(convertTagsStringToArrayAndAddSynonyms)
+        .map((perk) => {
+            const tags = [...perk.tags, "killer"];
 
-        if (perk.name.startsWith("Hex:")) {
-            tags.push("hex");
-        }
+            if (perk.name.startsWith("Hex:")) {
+                tags.push("hex");
+            }
 
-        if (perk.name.startsWith("Scourge Hook:")) {
-            tags.push("scourge");
-        }
+            if (perk.name.startsWith("Scourge Hook:")) {
+                tags.push("scourge");
+            }
 
-        return {
-            ...perk,
-            tags,
-        };
-    });
+            return {
+                ...perk,
+                tags,
+            };
+        });
 }
 
 function getSurvivorPerks() {
-    return survivorPerks.map(convertTagsStringToArray).map((perk) => {
-        const tags = [...perk.tags, "survivor"];
+    return survivorPerks
+        .map(convertTagsStringToArrayAndAddSynonyms)
+        .map((perk) => {
+            const tags = [...perk.tags, "survivor"];
 
-        if (perk.name.startsWith("Boon:")) {
-            tags.push("boon");
-        }
+            if (perk.name.startsWith("Boon:")) {
+                tags.push("boon");
+            }
 
-        return {
-            ...perk,
-            tags,
-        };
-    });
+            return {
+                ...perk,
+                tags,
+            };
+        });
 }
 
-function convertTagsStringToArray(perk: typeof survivorPerks[0]) {
+function convertTagsStringToArrayAndAddSynonyms(perk: typeof survivorPerks[0]) {
     const tags = perk.tags
         .split(",")
         .map((tag) => {
