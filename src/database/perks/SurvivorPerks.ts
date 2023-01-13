@@ -381,7 +381,7 @@ export const survivorPerks = [
         name: "Aftercare",
         code: "aftercare",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/0d/IconPerks_aftercare.png",
-        tags: "hand",
+        tags: "hand,fist",
     },
     {
         name: "Distortion",
