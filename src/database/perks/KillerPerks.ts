@@ -543,7 +543,7 @@ export const killerPerks = [
         name: "Scourge Hook: Floods of Rage",
         code: "scourgehookfloodsofrage",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/1/1c/IconPerks_scourgeHookFloodsOfRage.png",
-        tags: "hook",
+        tags: "hook,water,rain",
     },
     {
         name: "Call of Brine",
