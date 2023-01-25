@@ -411,7 +411,7 @@ export const killerPerks = [
         name: "Hex: Retribution",
         code: "hexretribution",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/ab/IconPerks_hexRetribution.png",
-        tags: "skull",
+        tags: "totem,skull",
     },
     {
         name: "Forced Penance",
@@ -447,7 +447,7 @@ export const killerPerks = [
         name: "Hex: Undying",
         code: "hexundying",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/f/fe/IconPerks_hexUndying.png",
-        tags: "skull",
+        tags: "totem,skull",
     },
     {
         name: "Hoarder",
@@ -537,7 +537,7 @@ export const killerPerks = [
         name: "Hex: Pentimento",
         code: "hexpentimento",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5d/IconPerks_hexPentimento.png",
-        tags: "hand,skull",
+        tags: "hand,totem,skull",
     },
     {
         name: "Scourge Hook: Floods of Rage",

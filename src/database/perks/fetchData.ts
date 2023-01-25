@@ -23,8 +23,10 @@ export async function fetchPerkDescription(name: string) {
 
     // The wiki sometimes forgets to add spaces between words when there is an image between them, so add them in when needed.
     const smartRemoveSpan = (span: HTMLElement) => {
-        const textBefore = span.previousSibling.text;
-        const textAfter = span.nextSibling.text;
+        const textBefore =
+            span.previousSibling !== null ? span.previousSibling.text : "";
+        const textAfter =
+            span.nextSibling !== null ? span.nextSibling.text : "";
         const needsSpace =
             textBefore.length > 0 &&
             textAfter.length > 0 &&
