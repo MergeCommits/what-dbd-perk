@@ -1,4 +1,5 @@
 import { getAllPerks } from "database/perks/getAllPerks";
+import type { HTMLElement } from "node-html-parser";
 import { parse } from "node-html-parser";
 
 export async function fetchPerkDescription(name: string) {
@@ -19,9 +20,23 @@ export async function fetchPerkDescription(name: string) {
 
     perkDescription.querySelectorAll("img").forEach((e) => e.remove());
     perkDescription.querySelectorAll("a").forEach((e) => e.replaceWith(e.text));
+
+    // The wiki sometimes forgets to add spaces between words when there is an image between them, so add them in when needed.
+    const smartRemoveSpan = (span: HTMLElement) => {
+        const textBefore = span.previousSibling.text;
+        const textAfter = span.nextSibling.text;
+        const needsSpace =
+            textBefore.length > 0 &&
+            textAfter.length > 0 &&
+            !textBefore.endsWith(" ") &&
+            !textAfter.startsWith(" ") &&
+            !textAfter.startsWith(",");
+
+        span.replaceWith(`${needsSpace ? " " : ""}${span.text}`);
+    };
     perkDescription
         .querySelectorAll("span:not([class])")
-        .forEach((e) => e.replaceWith(e.text));
+        .forEach(smartRemoveSpan);
     perkDescription
         .querySelectorAll("span[class]")
         .forEach((e) => e.removeAttribute("class"));
