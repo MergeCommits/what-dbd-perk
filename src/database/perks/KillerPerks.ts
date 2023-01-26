@@ -555,7 +555,7 @@ export const killerPerks = [
         name: "Merciless Storm",
         code: "mercilessstorm",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/36/IconPerks_mercilessStorm.png",
-        tags: "person",
+        tags: "person,rain",
     },
     {
         name: "Dissolution",
