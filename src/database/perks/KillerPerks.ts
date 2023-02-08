@@ -453,7 +453,7 @@ export const killerPerks = [
         name: "Hoarder",
         code: "hoarder",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/2/23/IconPerks_hoarder.png",
-        tags: "person",
+        tags: "person,teapot",
     },
     {
         name: "Oppression",
