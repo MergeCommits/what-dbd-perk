@@ -618,7 +618,7 @@ export const killerPerks = [
         tags: "hand,sword,skull,broken",
     },
     {
-        name: "Thwack!",
+        name: "THWACK!",
         code: "thwack",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3e/IconPerks_thack.png",
         tags: "face",

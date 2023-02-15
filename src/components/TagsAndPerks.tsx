@@ -1,13 +1,14 @@
 import { PerkResults } from "components/PerkResults";
 import { TagSearchBox } from "components/TagSearchBox";
+// import { env } from "env/server.mjs";
 import type { FC } from "react";
 import { useState } from "react";
-import { trpc } from "utils/trpc";
+import { api } from "utils/api";
 
 export const TagsAndPerks: FC = () => {
     const [selectedTags, setSelectedTag] = useState<string[]>([]);
 
-    const result = trpc.perks.getPerksFromTags.useQuery({ tags: selectedTags });
+    const result = api.perks.getPerksFromTags.useQuery({ tags: selectedTags });
 
     return (
         <div className={"flex w-full flex-col gap-8"}>
@@ -16,8 +17,11 @@ export const TagsAndPerks: FC = () => {
                 setSelectedTags={setSelectedTag}
                 isLoading={result.isLoading}
             />
-            {result.data !== undefined && selectedTags.length > 0 && (
-                <PerkResults perks={result.data.perks} />
+            {result.data !== undefined && (
+                <PerkResults
+                    perks={result.data.perks}
+                    selectedTags={selectedTags}
+                />
             )}
         </div>
     );

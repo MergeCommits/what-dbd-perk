@@ -8,9 +8,6 @@ const t = initTRPC.context().create({
     },
 });
 
-export const router = t.router;
+export const createTRPCRouter = t.router;
 
-/**
- * Unprotected procedure
- **/
 export const publicProcedure = t.procedure;

@@ -1,11 +1,12 @@
 import { getAllPerks } from "database/perks/getAllPerks";
+import { env } from "env/server.mjs";
 import type { HTMLElement } from "node-html-parser";
 import { parse } from "node-html-parser";
 
+const url = "https://deadbydaylight.fandom.com/wiki/";
+
 export async function fetchPerkDescription(name: string) {
-    const wikiPage = await fetch(
-        `https://deadbydaylight.fandom.com/wiki/${name.replaceAll(" ", "_")}`
-    );
+    const wikiPage = await fetch(`${url}${name.replaceAll(" ", "_")}`);
 
     if (wikiPage.status === 404) {
         return '<span class="text-red-900">Unable to fetch perk description.</span>';
@@ -51,7 +52,7 @@ export async function fetchPerkDescription(name: string) {
 }
 
 export async function fetchPerksFromTags(tags: string[]) {
-    if (tags.length < 1) {
+    if (tags.length < 1 && env.NODE_ENV !== "development") {
         return [];
     }
 

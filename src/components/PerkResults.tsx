@@ -4,10 +4,11 @@ import type { FC } from "react";
 
 type Props = {
     perks: DBDPerk[];
+    selectedTags: string[];
 };
 
 export const PerkResults: FC<Props> = (props) => {
-    if (props.perks.length < 1) {
+    if (props.perks.length < 1 && props.selectedTags.length > 0) {
         return (
             <div className={"flex flex-col"}>
                 <h1 className={"text-center font-bold text-slate-100"}>
