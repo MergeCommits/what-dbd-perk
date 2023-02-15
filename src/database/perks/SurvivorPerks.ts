@@ -291,7 +291,7 @@ export const survivorPerks = [
         name: "Lithe",
         code: "lithe",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/cc/IconPerks_lithe.png",
-        tags: "person,jump",
+        tags: "person,jumping",
     },
     {
         name: "Alert",
@@ -693,6 +693,42 @@ export const survivorPerks = [
         name: "Quick Gambit",
         code: "quickgambit",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/f/f7/IconPerks_quickGambit.png",
+        tags: "person,running",
+    },
+    {
+        name: "Friendly Competition",
+        code: "friendlycompetition",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3a/IconPerks_friendlyCompetition.png",
+        tags: "hand,wrench",
+    },
+    {
+        name: "Teamwork: Power of Two",
+        code: "teamworkpoweroftwo",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3a/IconPerks_teamworkPowerOfTwo.png",
+        tags: "person,running",
+    },
+    {
+        name: "Cut Loose",
+        code: "cutloose",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3a/IconPerks_cutLoose.png",
+        tags: "person,face,hand,window,jumping",
+    },
+    {
+        name: "Blood Rush",
+        code: "bloodrush",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3a/IconPerks_bloodRush.png",
+        tags: "person,heart",
+    },
+    {
+        name: "Teamwork: Collective Stealth",
+        code: "teamworkcollectivestealth",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3a/IconPerks_teamworkAmongUs.png",
+        tags: "person",
+    },
+    {
+        name: "Background Player",
+        code: "backgroundplayer",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3a/IconPerks_backgroundPlayer.png",
         tags: "person,running",
     },
 ];

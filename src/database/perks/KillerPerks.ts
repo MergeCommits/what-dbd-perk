@@ -617,4 +617,22 @@ export const killerPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/aa/IconPerks_hubris.png",
         tags: "hand,sword,skull,broken",
     },
+    {
+        name: "Thwack!",
+        code: "thwack",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3e/IconPerks_thack.png",
+        tags: "face",
+    },
+    {
+        name: "Leverage",
+        code: "leverage",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3e/IconPerks_leverage.png",
+        tags: "person,claw,hook",
+    },
+    {
+        name: "Game Afoot",
+        code: "gameafoot",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/3e/IconPerks_gameAfoot.png",
+        tags: "person,claw",
+    },
 ];

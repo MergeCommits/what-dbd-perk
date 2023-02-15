@@ -8,8 +8,8 @@ export const synonymTags = [
     ["plant", "flower", "nature"],
     ["crouch", "kneel"],
     ["clock", "watch", "time"],
-    ["runnning", "sprint"],
-    ["jump", "leap", "vault"],
+    ["runnning", "sprinting"],
+    ["jumping", "leaping", "vaulting"],
     ["window", "pallet"],
     ["hiding", "hide"],
     ["grenade", "flash bang"],
@@ -24,6 +24,7 @@ export const synonymTags = [
     ["head", "face"],
     ["grab", "grasp"],
     ["knight", ...peopleTags],
+    ["wrench", "tool"],
 ];
 
 export const getSynonyms = (tags: string[]) => {
