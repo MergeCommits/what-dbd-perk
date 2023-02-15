@@ -1,5 +1,5 @@
 import { getAllPerks } from "database/perks/getAllPerks";
-import { env } from "env/server.mjs";
+import { env } from "env.mjs";
 import type { HTMLElement } from "node-html-parser";
 import { parse } from "node-html-parser";
 
