@@ -12,7 +12,6 @@ module.exports = {
     arrowParens: "always",
     endOfLine: "lf",
     embeddedLanguageFormatting: "auto",
-    plugins: [require("./merged-prettier-plugin.cjs")],
     overrides: [
         {
             files: "*.md",
