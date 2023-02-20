@@ -2,9 +2,9 @@
 
 import { allTags } from "database/tags/builder";
 import { getSynonyms } from "database/tags/SynonymTags";
-import type { FC } from "react";
 import { useId } from "react";
 import Select from "react-select";
+import type { ReactFunction } from "types/ReactFunction";
 
 type Props = {
     selectedTags: string[];
@@ -12,7 +12,7 @@ type Props = {
     isLoading: boolean;
 };
 
-export const TagSearchBox: FC<Props> = (props) => {
+export const TagSearchBox: ReactFunction<Props> = (props) => {
     const selectID = useId();
 
     const selectedSynonyms = getSynonyms(props.selectedTags);

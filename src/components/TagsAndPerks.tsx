@@ -1,10 +1,10 @@
 import { PerkResults } from "components/PerkResults";
 import { TagSearchBox } from "components/TagSearchBox";
-import type { FC } from "react";
 import { useState } from "react";
+import type { ReactFunction } from "types/ReactFunction";
 import { api } from "utils/api";
 
-export const TagsAndPerks: FC = () => {
+export const TagsAndPerks: ReactFunction = () => {
     const [selectedTags, setSelectedTag] = useState<string[]>([]);
 
     const result = api.perks.getPerksFromTags.useQuery({ tags: selectedTags });
