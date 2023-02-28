@@ -3,20 +3,20 @@
     "version": "0.1.0",
     "license": "Zlib",
     "scripts": {
-        "postinstall": "cp .gitignore .prettierignore",
         "build": "next build",
         "dev": "next dev",
         "lint": "next lint",
-        "start": "next start",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "start": "next start"
     },
     "dependencies": {
+        "@babel/core": "^7.0.0",
         "@tanstack/react-query": "^4.20.0",
         "@trpc/client": "^10.9.0",
         "@trpc/next": "^10.9.0",
         "@trpc/react-query": "^10.9.0",
         "@trpc/server": "^10.9.0",
-        "next": "13.1.6",
+        "next": "^13.2.1",
         "node-html-parser": "^6.1.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
@@ -34,7 +34,7 @@
         "@typescript-eslint/parser": "^5.47.1",
         "autoprefixer": "^10.4.7",
         "eslint": "^8.30.0",
-        "eslint-config-next": "13.1.6",
+        "eslint-config-next": "^13.2.1",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-no-relative-import-paths": "^1.4.0",
         "eslint-plugin-react": "^7.31.10",
@@ -42,14 +42,15 @@
         "husky": ">=6",
         "lint-staged": ">=10",
         "postcss": "^8.4.14",
-        "prettier": "^2.7.1",
+        "prettier": "^2.8.4",
         "prettier-plugin-organize-imports": "^3.1.1",
+        "prettier-plugin-pkg": "^0.17.1",
         "prettier-plugin-tailwindcss": "^0.2.1",
         "tailwindcss": "^3.2.0",
         "typescript": "^4.9.4"
     },
     "ct3aMetadata": {
-        "initVersion": "7.5.3"
+        "initVersion": "7.5.8"
     },
     "lint-staged": {
         "*.{mjs,cjs,ts,tsx}": "eslint --cache --fix",
