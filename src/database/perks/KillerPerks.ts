@@ -585,7 +585,7 @@ export const killerPerks = [
         name: "Superior Anatomy",
         code: "superioranatomy",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/4/4a/IconPerks_superiorAnatomy.png",
-        tags: "person,vault,window,knife",
+        tags: "person,vaulting,window,knife",
     },
     {
         name: "Awakened Awareness",

@@ -291,7 +291,7 @@ export const survivorPerks = [
         name: "Lithe",
         code: "lithe",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/c/cc/IconPerks_lithe.png",
-        tags: "person,jumping",
+        tags: "person,vaulting",
     },
     {
         name: "Alert",
@@ -711,7 +711,7 @@ export const survivorPerks = [
         name: "Cut Loose",
         code: "cutloose",
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/02/IconPerks_cutLoose.png",
-        tags: "person,face,hand,window,jumping",
+        tags: "person,face,hand,window,vaulting",
     },
     {
         name: "Blood Rush",

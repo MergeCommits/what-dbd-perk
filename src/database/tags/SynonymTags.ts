@@ -9,7 +9,7 @@ export const synonymTags = [
     ["crouch", "kneel"],
     ["clock", "watch", "time"],
     ["runnning", "sprinting"],
-    ["jumping", "leaping", "vaulting"],
+    ["vaulting", "jumping", "leaping"],
     ["window", "pallet"],
     ["hiding", "hide"],
     ["grenade", "flash bang"],
