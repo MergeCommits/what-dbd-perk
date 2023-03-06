@@ -1,5 +1,3 @@
-![](https://img.shields.io/badge/Current_Version-Chapter_27-red)
-
 # Which Dead by Daylight perk is this?
 
 A website which lets you enter a description of a perk's icon using tags, and then lists all of the perks that match it, along with their descriptions. Useful for when you're watching a streamer/video.
