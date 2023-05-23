@@ -731,4 +731,22 @@ export const survivorPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/e/e8/IconPerks_backgroundPlayer.png",
         tags: "person,running",
     },
+    {
+        name: "Troubleshooter",
+        code: "troubleshooter",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/0c/IconPerks_troubleshooter.png",
+        tags: "eye,generator,person",
+    },
+    {
+        name: "Made for This",
+        code: "madeforthis",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/0c/IconPerks_madeForThis.png",
+        tags: "person,running",
+    },
+    {
+        name: "Scavenger",
+        code: "scavenger",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/0c/IconPerks_scavenger.png",
+        tags: "person,toolbox,box",
+    },
 ];

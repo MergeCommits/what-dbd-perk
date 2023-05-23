@@ -635,4 +635,22 @@ export const killerPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/53/IconPerks_gameAfoot.png",
         tags: "person,claw",
     },
+    {
+        name: "Genetic Limits",
+        code: "geneticlimits",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5a/IconPerks_geneticLimits.png",
+        tags: "person,dna",
+    },
+    {
+        name: "Forced Hesitation",
+        code: "forcedhesitation",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5a/IconPerks_forcedHesitation.png",
+        tags: "person,sword,claw",
+    },
+    {
+        name: "Machine Learning",
+        code: "machinelearning",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5a/IconPerks_machineLearning.png",
+        tags: "person,sword,claw",
+    },
 ];

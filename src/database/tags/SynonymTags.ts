@@ -25,6 +25,8 @@ export const synonymTags = [
     ["grab", "grasp"],
     ["knight", ...peopleTags],
     ["wrench", "tool"],
+    ["sword", "scythe", "knife"],
+    ["box", "crate"],
 ];
 
 export const getSynonyms = (tags: string[]) => {
