@@ -4,7 +4,6 @@ import { allTags } from "database/tags/builder";
 import { getSynonyms } from "database/tags/SynonymTags";
 import { useId } from "react";
 import Select from "react-select";
-import type { ReactFunction } from "types/ReactFunction";
 
 type Props = {
     selectedTags: string[];
@@ -12,7 +11,7 @@ type Props = {
     isLoading: boolean;
 };
 
-export const TagSearchBox: ReactFunction<Props> = (props) => {
+export function TagSearchBox(props: Props) {
     const selectID = useId();
 
     const selectedSynonyms = getSynonyms(props.selectedTags);
@@ -39,4 +38,4 @@ export const TagSearchBox: ReactFunction<Props> = (props) => {
             }}
         />
     );
-};
+}

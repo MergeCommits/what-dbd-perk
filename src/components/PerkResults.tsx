@@ -1,13 +1,12 @@
 import type { DBDPerk } from "database/perks/getAllPerks";
 import Image from "next/image";
-import type { ReactFunction } from "types/ReactFunction";
 
 type Props = {
     perks: DBDPerk[];
     selectedTags: string[];
 };
 
-export const PerkResults: ReactFunction<Props> = (props) => {
+export function PerkResults(props: Props) {
     if (props.perks.length < 1 && props.selectedTags.length > 0) {
         return (
             <div className={"flex flex-col"}>
@@ -60,4 +59,4 @@ export const PerkResults: ReactFunction<Props> = (props) => {
             ))}
         </div>
     );
-};
+}
