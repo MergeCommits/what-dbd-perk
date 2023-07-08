@@ -752,19 +752,19 @@ export const survivorPerks = [
     {
         name: "Dramaturgy",
         code: "dramaturgy",
-        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/0f/IconPerks_dramaturgy.png",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/8/85/IconPerks_dramaturgy.png",
         tags: "person,face,mask,hand",
     },
     {
         name: "Scene Partner",
         code: "scenepartner",
-        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5f/IconPerks_scenePartner.png",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/b/b4/IconPerks_scenePartner.png",
         tags: "person,knife",
     },
     {
         name: "Plot Twist",
         code: "plottwist",
-        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/5/5f/IconPerks_plotTwist.png",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/ac/IconPerks_plotTwist.png",
         tags: "person,bandage,injury,pose",
     },
 ];
