@@ -34,7 +34,7 @@ export function TagSearchBox(props: Props) {
             isMulti
             isLoading={props.isLoading}
             onChange={(tags) => {
-                props.setSelectedTags(tags?.map((tag) => tag.value) ?? []);
+                props.setSelectedTags(tags.map((tag) => tag.value));
             }}
         />
     );
