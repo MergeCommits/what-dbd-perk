@@ -1,4 +1,4 @@
-import { fetchPerksFromTags } from "database/perks/fetchData";
+import { fetchPerksFromTags } from "database/fetchData";
 import { createTRPCRouter, publicProcedure } from "server/api/trpc";
 import { z } from "zod";
 

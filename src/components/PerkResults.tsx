@@ -1,4 +1,4 @@
-import type { DBDPerk } from "database/perks/getAllPerks";
+import type { DBDPerk } from "database/getAllPerks";
 import Image from "next/image";
 
 type Props = {

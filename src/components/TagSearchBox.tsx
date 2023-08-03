@@ -1,7 +1,7 @@
 "use client";
 
-import { allTags } from "database/tags/builder";
-import { getSynonyms } from "database/tags/SynonymTags";
+import { allTags } from "database/builder";
+import { getSynonyms } from "database/synonymTags";
 import { useId } from "react";
 import Select from "react-select";
 

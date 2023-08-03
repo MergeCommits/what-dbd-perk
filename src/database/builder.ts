@@ -1,4 +1,4 @@
-import { getAllPerks } from "database/perks/getAllPerks";
+import { getAllPerks } from "database/getAllPerks";
 
 export const allTags = [
     ...new Set(

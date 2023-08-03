@@ -1,4 +1,4 @@
-import { getAllPerks } from "database/perks/getAllPerks";
+import { getAllPerks } from "database/getAllPerks";
 import { env } from "env.mjs";
 import type { HTMLElement } from "node-html-parser";
 import { parse } from "node-html-parser";
@@ -24,6 +24,11 @@ export async function fetchPerkDescription(name: string) {
 
     // The wiki sometimes forgets to add spaces between words when there is an image between them, so add them in when needed.
     const smartRemoveSpan = (span: HTMLElement) => {
+        // The typing for previousSibling and nextSibling is wrong and doesn't show that they're nullable.
+        // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+        if (span.previousSibling === null || span.nextSibling === null) {
+            return;
+        }
         const textBefore = span.previousSibling.text;
         const textAfter = span.nextSibling.text;
         const needsSpace =
@@ -61,7 +66,15 @@ export async function fetchPerksFromTags(tags: string[]) {
 
     const promises = filteredPerks.map(async (perk) => ({
         ...perk,
-        description: await fetchPerkDescription(perk.name),
+        description: await fetchPerkDescription(perk.name).catch((e) => {
+            // eslint-disable-next-line no-console
+            console.error(
+                `Failed to fetch perk description for perk "${perk.name}"`
+            );
+            // eslint-disable-next-line no-console
+            console.error(e);
+            return '<span class="text-red-900">Unable to fetch perk description.</span>';
+        }),
     }));
 
     return await Promise.all(promises);

@@ -1,8 +1,8 @@
-import { killerPerks } from "database/perks/KillerPerks";
-import { survivorPerks } from "database/perks/SurvivorPerks";
-import { synonymTags } from "database/tags/SynonymTags";
+import { killerPerks } from "database/killerPerks";
+import { survivorPerks } from "database/survivorPerks";
+import { synonymTags } from "database/synonymTags";
 
-export type DBDPerk = Omit<typeof survivorPerks[0], "tags"> & {
+export type DBDPerk = Omit<(typeof survivorPerks)[0], "tags"> & {
     tags: string[];
     description: string;
 };
@@ -49,7 +49,9 @@ function getSurvivorPerks() {
         });
 }
 
-function convertTagsStringToArrayAndAddSynonyms(perk: typeof survivorPerks[0]) {
+function convertTagsStringToArrayAndAddSynonyms(
+    perk: (typeof survivorPerks)[0]
+) {
     const tags = perk.tags
         .split(",")
         .map((tag) => {
