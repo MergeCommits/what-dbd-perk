@@ -1,5 +1,6 @@
 import { PerkResults } from "components/PerkResults";
 import { TagSearchBox } from "components/TagSearchBox";
+import { env } from "env.mjs";
 import { useState } from "react";
 import { api } from "utils/api";
 
@@ -13,7 +14,10 @@ export function TagsAndPerks() {
             <TagSearchBox
                 selectedTags={selectedTags}
                 setSelectedTags={setSelectedTag}
-                isLoading={result.isLoading}
+                isLoading={
+                    result.isLoading &&
+                    (selectedTags.length > 0 || env.NODE_ENV === "development")
+                }
             />
             {result.data !== undefined && (
                 <PerkResults
