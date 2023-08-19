@@ -767,4 +767,22 @@ export const survivorPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/a/ac/IconPerks_plotTwist.png",
         tags: "person,bandage,injury,pose",
     },
+    {
+        name: "Chemical Trap",
+        code: "chemicaltrap",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/9/9a/IconPerks_chemicalTrap.png",
+        tags: "bomb",
+    },
+    {
+        name: "Light-Footed",
+        code: "lightfooted",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/e/e5/IconPerks_light-Footed.png",
+        tags: "foot,running",
+    },
+    {
+        name: "Lucky Star",
+        code: "luckystar",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/08/IconPerks_luckyStar.png",
+        tags: "person,face",
+    },
 ];

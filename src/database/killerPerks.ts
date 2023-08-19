@@ -653,4 +653,22 @@ export const killerPerks = [
         icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/01/IconPerks_machineLearning.png",
         tags: "person,sword,claw",
     },
+    {
+        name: "Rapid Brutality",
+        code: "rapidbrutality",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/d/d4/IconPerks_rapidBrutality.png",
+        tags: "alien,running",
+    },
+    {
+        name: "Alien Instinct",
+        code: "alieninstinct",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/3/34/IconPerks_alienInstinct.png",
+        tags: "alien,hand",
+    },
+    {
+        name: "Ultimate Weapon",
+        code: "ultimateweapon",
+        icon: "https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/8/8a/IconPerks_ultimateWeapon.png",
+        tags: "alien",
+    },
 ];
