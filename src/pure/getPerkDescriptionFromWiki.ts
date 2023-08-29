@@ -1,11 +1,9 @@
-import { getAllPerks } from "database/getAllPerks";
-import { env } from "env.mjs";
 import type { HTMLElement } from "node-html-parser";
 import { parse } from "node-html-parser";
 
 const url = "https://deadbydaylight.fandom.com/wiki/";
 
-export async function fetchPerkDescription(name: string) {
+export async function getPerkDescriptionFromWiki(name: string) {
     const wikiPage = await fetch(`${url}${name.replaceAll(" ", "_")}`);
 
     if (wikiPage.status === 404) {
@@ -52,30 +50,4 @@ export async function fetchPerkDescription(name: string) {
         .forEach((e) => e.setAttribute("class", "list-disc ml-4"));
 
     return perkDescription.innerHTML;
-}
-
-export async function fetchPerksFromTags(tags: string[]) {
-    if (tags.length < 1 && env.NODE_ENV !== "development") {
-        return [];
-    }
-
-    const perks = getAllPerks();
-    const filteredPerks = perks.filter((perk) => {
-        return tags.every((tag) => perk.tags.includes(tag));
-    });
-
-    const promises = filteredPerks.map(async (perk) => ({
-        ...perk,
-        description: await fetchPerkDescription(perk.name).catch((e) => {
-            // eslint-disable-next-line no-console
-            console.error(
-                `Failed to fetch perk description for perk "${perk.name}"`
-            );
-            // eslint-disable-next-line no-console
-            console.error(e);
-            return '<span class="text-red-900">Unable to fetch perk description.</span>';
-        }),
-    }));
-
-    return await Promise.all(promises);
 }

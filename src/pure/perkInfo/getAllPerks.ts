@@ -1,6 +1,6 @@
-import { killerPerks } from "database/killerPerks";
-import { survivorPerks } from "database/survivorPerks";
-import { synonymTags } from "database/synonymTags";
+import { killerPerks } from "pure/perkInfo/killerPerks";
+import { survivorPerks } from "pure/perkInfo/survivorPerks";
+import { synonymTags } from "pure/tags/synonymTags";
 
 export type DBDPerk = Omit<(typeof survivorPerks)[0], "tags"> & {
     tags: string[];

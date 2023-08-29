@@ -1,4 +1,4 @@
-import { fetchPerksFromTags } from "database/fetchData";
+import { getPerksWithTags } from "pure/getPerksWithTags";
 import { createTRPCRouter, publicProcedure } from "server/api/trpc";
 import { z } from "zod";
 
@@ -7,7 +7,7 @@ export const perksRouter = createTRPCRouter({
         .input(z.object({ tags: z.array(z.string()) }))
         .query(async ({ input }) => {
             return {
-                perks: await fetchPerksFromTags(input.tags),
+                perks: await getPerksWithTags(input.tags),
             };
         }),
 });

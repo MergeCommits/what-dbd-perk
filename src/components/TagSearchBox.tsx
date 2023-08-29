@@ -1,7 +1,7 @@
 "use client";
 
-import { allTags } from "database/builder";
-import { getSynonyms } from "database/synonymTags";
+import { getAllTags } from "pure/tags/getAllTags";
+import { getSynonyms } from "pure/tags/synonymTags";
 import { useId } from "react";
 import Select from "react-select";
 
@@ -15,7 +15,7 @@ export function TagSearchBox(props: Props) {
     const selectID = useId();
 
     const selectedSynonyms = getSynonyms(props.selectedTags);
-    const availableTags = allTags.filter(
+    const availableTags = getAllTags().filter(
         (tag) =>
             !props.selectedTags.includes(tag) && !selectedSynonyms.includes(tag)
     );
