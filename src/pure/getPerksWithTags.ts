@@ -36,7 +36,7 @@ function getPerkDescription(perkName: string) {
     }
 }
 
-export async function getPerksWithTags(tags: string[]) {
+export function getPerksWithTags(tags: string[]) {
     if (tags.length < 1 && env.NODE_ENV !== "development") {
         return [];
     }
@@ -46,11 +46,9 @@ export async function getPerksWithTags(tags: string[]) {
         return tags.every((tag) => perk.tags.includes(tag));
     });
 
-    const promises = filteredPerks.map((perk) => ({
+    return filteredPerks.map((perk) => ({
         ...perk,
         icon: getImageURL(perk.name, perk.icon, perk.perkNameInImageFilename),
         description: getPerkDescription(perk.name),
     }));
-
-    return await Promise.all(promises);
 }

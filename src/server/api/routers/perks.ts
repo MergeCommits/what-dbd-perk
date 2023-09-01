@@ -5,9 +5,9 @@ import { z } from "zod";
 export const perksRouter = createTRPCRouter({
     getPerksFromTags: publicProcedure
         .input(z.object({ tags: z.array(z.string()) }))
-        .query(async ({ input }) => {
+        .query(({ input }) => {
             return {
-                perks: await getPerksWithTags(input.tags),
+                perks: getPerksWithTags(input.tags),
             };
         }),
 });
