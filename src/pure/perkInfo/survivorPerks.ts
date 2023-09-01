@@ -7,7 +7,7 @@ export const survivorPerks = [
     {
         name: "Déjà Vu",
         icon: "8/89",
-        perkNameInImage: "dejaVu",
+        perkNameInImageFilename: "dejaVu",
         tags: "eye,spiral",
     },
     {
@@ -33,7 +33,7 @@ export const survivorPerks = [
     {
         name: "Kinship",
         icon: "1/1d",
-        perkNameInImage: "camaraderie",
+        perkNameInImageFilename: "camaraderie",
         tags: "hook",
     },
     {
@@ -69,7 +69,7 @@ export const survivorPerks = [
     {
         name: "Self-Aware",
         icon: "7/7c",
-        perkNameInImage: "fixated",
+        perkNameInImageFilename: "fixated",
         tags: "feet,scratch marks",
     },
     {

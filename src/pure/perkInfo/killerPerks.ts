@@ -7,7 +7,7 @@ export const killerPerks = [
     {
         name: "Claustrophobia",
         icon: "c/c6",
-        perkNameInImage: "cruelLimits",
+        perkNameInImageFilename: "cruelLimits",
         tags: "person,cage",
     },
     {
@@ -23,7 +23,7 @@ export const killerPerks = [
     {
         name: "Fearmonger",
         icon: "0/0f",
-        perkNameInImage: "mindbreaker",
+        perkNameInImageFilename: "mindbreaker",
         tags: "person",
     },
     {
@@ -49,7 +49,7 @@ export const killerPerks = [
     {
         name: "Jolt",
         icon: "3/3b",
-        perkNameInImage: "surge",
+        perkNameInImageFilename: "surge",
         tags: "generator,broken",
     },
     {
@@ -228,8 +228,8 @@ export const killerPerks = [
         tags: "skull,gate",
     },
     {
-        name: "Hangman's Trick",
-        icon: "b/b4",
+        name: "Scourge Hook: Hangman's Trick",
+        icon: "9/9a",
         tags: "hand,rope",
     },
     {
@@ -390,7 +390,7 @@ export const killerPerks = [
     {
         name: "Coup de Grâce",
         icon: "b/bd",
-        perkNameInImage: "coupDeGr%C3%A2ce",
+        perkNameInImageFilename: "coupDeGr%C3%A2ce",
         tags: "hook,skull",
     },
     {

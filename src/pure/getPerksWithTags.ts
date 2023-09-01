@@ -1,14 +1,14 @@
+import perkDescriptions from "__generated__/perkDescriptions.json";
 import { env } from "env.mjs";
-import { getPerkDescriptionFromWiki } from "pure/getPerkDescriptionFromWiki";
 import { getAllPerks } from "pure/perkInfo/getAllPerks";
 
 function getImageURL(
     perkName: string,
     imageCode: string,
-    perkNameInImage?: string
+    perkNameInImageFilename?: string
 ) {
     const perkNameInFile =
-        perkNameInImage ??
+        perkNameInImageFilename ??
         perkName
             .replace(/\w/g, (match) => match.toLowerCase())
             .replace(/&/g, "and")
@@ -18,6 +18,22 @@ function getImageURL(
             .replace(/\s/g, "");
     const fileName = `IconPerks_${perkNameInFile}.png`;
     return `https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/${imageCode}/${fileName}`;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function getPerkDescription(perkName: string) {
+    // @ts-expect-error JSON access
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    const description = perkDescriptions[perkName] as string | undefined;
+    if (description) {
+        return description;
+    } else {
+        // eslint-disable-next-line no-console
+        console.error(
+            `Failed to fetch perk description for perk "${perkName}"`
+        );
+        return '<span class="text-red-900">Unable to fetch perk description.</span>';
+    }
 }
 
 export async function getPerksWithTags(tags: string[]) {
@@ -30,18 +46,10 @@ export async function getPerksWithTags(tags: string[]) {
         return tags.every((tag) => perk.tags.includes(tag));
     });
 
-    const promises = filteredPerks.map(async (perk) => ({
+    const promises = filteredPerks.map((perk) => ({
         ...perk,
-        icon: getImageURL(perk.name, perk.icon, perk.perkNameInImage),
-        description: await getPerkDescriptionFromWiki(perk.name).catch((e) => {
-            // eslint-disable-next-line no-console
-            console.error(
-                `Failed to fetch perk description for perk "${perk.name}"`
-            );
-            // eslint-disable-next-line no-console
-            console.error(e);
-            return '<span class="text-red-900">Unable to fetch perk description.</span>';
-        }),
+        icon: getImageURL(perk.name, perk.icon, perk.perkNameInImageFilename),
+        description: getPerkDescription(perk.name),
     }));
 
     return await Promise.all(promises);
