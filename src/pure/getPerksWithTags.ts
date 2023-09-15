@@ -20,7 +20,6 @@ function getImageURL(
     return `https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/${imageCode}/${fileName}`;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getPerkDescription(perkName: string) {
     // @ts-expect-error JSON access
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

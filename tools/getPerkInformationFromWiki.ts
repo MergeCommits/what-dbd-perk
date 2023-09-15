@@ -79,8 +79,7 @@ async function writeAllPerkDescriptionsToFile() {
         JSON.stringify(perksWithDescription, null, 4),
         (err) => {
             if (err) {
-                // eslint-disable-next-line no-console
-                console.log(err);
+                throw err;
             } else {
                 // eslint-disable-next-line no-console
                 console.log("Perk descriptions successfully written to file.");
