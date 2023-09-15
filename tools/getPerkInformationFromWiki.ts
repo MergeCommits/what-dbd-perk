@@ -5,10 +5,10 @@ import { parse } from "node-html-parser";
 import { killerPerks } from "../src/pure/perkInfo/killerPerks";
 import { survivorPerks } from "../src/pure/perkInfo/survivorPerks";
 
-const websitePath = "https://deadbydaylight.fandom.com/wiki/";
+const websitePath = "https://deadbydaylight.fandom.com/wiki";
 
 async function getPerkDescriptionFromWiki(name: string) {
-    const perkURL = `${websitePath}${name.replaceAll(" ", "_")}`;
+    const perkURL = `${websitePath}/${name.replaceAll(" ", "_")}`;
     const body = (await axios.get<string>(perkURL)).data;
     const perkDescription = parse(body).querySelector(".formattedPerkDesc");
 
@@ -26,6 +26,9 @@ async function getPerkDescriptionFromWiki(name: string) {
 function sanitizePerkDescription(description: HTMLElement) {
     description.querySelectorAll("img").forEach((e) => e.remove());
     description.querySelectorAll("a").forEach((e) => e.replaceWith(e.text));
+    description
+        .querySelectorAll("ul")
+        .forEach((e) => e.setAttribute("class", "list-disc ml-4"));
 
     description
         .querySelectorAll("span:not([class])")
@@ -51,24 +54,15 @@ function sanitizePerkDescription(description: HTMLElement) {
     description
         .querySelectorAll("span[class]")
         .forEach((e) => e.removeAttribute("class"));
-
-    description
-        .querySelectorAll("ul")
-        .forEach((e) => e.setAttribute("class", "list-disc ml-4"));
 }
 
 async function writeAllPerkDescriptionsToFile() {
     const perks = [...survivorPerks, ...killerPerks];
-    const perksWithDescription: Record<string, string> = {};
+    const perkDescriptions: Record<string, string> = {};
 
-    const promises = perks.map((perk) => {
-        return getPerkDescriptionFromWiki(perk.name)
-            .then((description) => {
-                perksWithDescription[perk.name] = description;
-            })
-            .catch((err) => {
-                throw err;
-            });
+    const promises = perks.map(async (perk) => {
+        const description = await getPerkDescriptionFromWiki(perk.name);
+        perkDescriptions[perk.name] = description;
     });
 
     await Promise.all(promises);
@@ -76,13 +70,15 @@ async function writeAllPerkDescriptionsToFile() {
     // write to json file
     writeFile(
         "./src/__generated__/perkDescriptions.json",
-        JSON.stringify(perksWithDescription, null, 4),
+        JSON.stringify(perkDescriptions, null, 4),
         (err) => {
             if (err) {
                 throw err;
             } else {
                 // eslint-disable-next-line no-console
-                console.log("Perk descriptions successfully written to file.");
+                console.log(
+                    "\x1b[32mPerk descriptions successfully written to file.\x1b"
+                );
             }
         }
     );

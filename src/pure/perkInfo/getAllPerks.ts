@@ -2,11 +2,6 @@ import { killerPerks } from "pure/perkInfo/killerPerks";
 import { survivorPerks } from "pure/perkInfo/survivorPerks";
 import { synonymTags } from "pure/tags/synonymTags";
 
-export type DBDPerk = Omit<(typeof survivorPerks)[0], "tags"> & {
-    tags: string[];
-    description: string;
-};
-
 export function getAllPerks() {
     return [...getSurvivorPerks(), ...getKillerPerks()];
 }

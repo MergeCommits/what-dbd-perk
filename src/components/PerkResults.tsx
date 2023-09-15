@@ -1,5 +1,14 @@
 import Image from "next/image";
-import type { DBDPerk } from "pure/perkInfo/getAllPerks";
+import type { survivorPerks } from "pure/perkInfo/survivorPerks";
+
+type DBDPerk = Omit<
+    (typeof survivorPerks)[0],
+    "tags" | "perkNameInImageFile"
+> & {
+    tags: string[];
+    description: string;
+    icon: string;
+};
 
 type Props = {
     perks: DBDPerk[];
