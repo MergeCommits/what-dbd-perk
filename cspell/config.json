@@ -1,0 +1,23 @@
+{
+    "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+    "dictionaries": ["technical", "dbd"],
+    "dictionaryDefinitions": [
+        {
+            "addWords": true,
+            "name": "technical",
+            "path": "./technical.txt"
+        },
+        {
+            "addWords": true,
+            "name": "dbd",
+            "path": "./dbd.txt"
+        }
+    ],
+    "ignorePaths": [
+        "../.next",
+        "../node_modules",
+        "../pnpm-lock.yaml",
+        "../src/__generated__"
+    ],
+    "words": ["Jarjour"]
+}

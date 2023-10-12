@@ -1,0 +1,8 @@
+corepack
+tailwindcss
+nextjs
+tanstack
+trpc
+superjson
+wikia
+nocookie

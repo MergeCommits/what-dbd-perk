@@ -68,7 +68,7 @@ async function writeAllPerkImageURLsToFile() {
             } else {
                 // eslint-disable-next-line no-console
                 console.log(
-                    "\x1b[32mPerk image URLs successfully written to file.\x1b"
+                    "\x1b[32mPerk image URLs successfully written to file.\x1b[0m"
                 );
             }
         }

@@ -140,7 +140,7 @@ export const survivorPerks = [
     },
     {
         name: "Streetwise",
-        tags: "grafitti",
+        tags: "graffiti",
     },
     {
         name: "Left Behind",

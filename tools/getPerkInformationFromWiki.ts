@@ -77,7 +77,7 @@ async function writeAllPerkDescriptionsToFile() {
             } else {
                 // eslint-disable-next-line no-console
                 console.log(
-                    "\x1b[32mPerk descriptions successfully written to file.\x1b"
+                    "\x1b[32mPerk descriptions successfully written to file.\x1b[0m"
                 );
             }
         }
