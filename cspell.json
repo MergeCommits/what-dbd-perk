@@ -5,19 +5,20 @@
         {
             "addWords": true,
             "name": "technical",
-            "path": "./technical.txt"
+            "path": "./cspell/technical.txt"
         },
         {
             "addWords": true,
             "name": "dbd",
-            "path": "./dbd.txt"
+            "path": "./cspell/dbd.txt"
         }
     ],
     "ignorePaths": [
-        "../.next",
-        "../node_modules",
-        "../pnpm-lock.yaml",
-        "../src/__generated__"
+        ".next",
+        "node_modules",
+        "pnpm-lock.yaml",
+        ".vscode",
+        "src/__generated__"
     ],
     "words": ["Jarjour"]
 }

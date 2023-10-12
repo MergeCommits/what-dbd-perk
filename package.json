@@ -10,7 +10,7 @@
         "gen:perks": "ts-node -P ./tsconfig.tooling.json ./tools/getPerkInformationFromWiki.ts && ts-node -P ./tsconfig.tooling.json ./tools/getPerkImageURLFromWiki.ts",
         "lint": "next lint",
         "prepare": "husky install",
-        "spell-check": "cspell '**' --config ./cspell/config.json",
+        "spell-check": "cspell '**'",
         "start": "next start"
     },
     "dependencies": {
@@ -58,7 +58,7 @@
         "*.{mjs,cjs,ts,tsx}": "eslint --cache --fix",
         "*.{mjs,cjs,ts,tsx,prisma,css,md,json,env.*}": [
             "prettier --write",
-            "cspell --config ./cspell/config.json"
+            "cspell --cache"
         ]
     }
 }
