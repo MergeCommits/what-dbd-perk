@@ -56,6 +56,9 @@
     },
     "lint-staged": {
         "*.{mjs,cjs,ts,tsx}": "eslint --cache --fix",
-        "*.{mjs,cjs,ts,tsx,prisma,css,md,json,env.*}": "prettier --write"
+        "*.{mjs,cjs,ts,tsx,prisma,css,md,json,env.*}": [
+            "prettier --write",
+            "cspell --config ./cspell/config.json"
+        ]
     }
 }
