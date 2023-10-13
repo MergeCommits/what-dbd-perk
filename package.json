@@ -5,7 +5,7 @@
     "private": true,
     "packageManager": "pnpm@8.9.0",
     "scripts": {
-        "build": "pnpm run gen:perks && pnpm spell-check && next build",
+        "build": "pnpm run gen:perks && next build",
         "dev": "next dev",
         "gen:perks": "ts-node -P ./tsconfig.tooling.json ./tools/getPerkInformationFromWiki.ts && ts-node -P ./tsconfig.tooling.json ./tools/getPerkImageURLFromWiki.ts",
         "lint": "next lint",
