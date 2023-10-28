@@ -58,10 +58,18 @@ async function writeAllPerkImageURLsToFile() {
 
     await Promise.all(promises);
 
-    // write to json file
+    const sortedPerkImages: Record<string, string> = {};
+
+    Object.keys(perkImages)
+        .sort()
+        .forEach((key) => {
+            // @ts-expect-error key is a valid key
+            sortedPerkImages[key] = perkImages[key];
+        });
+
     writeFile(
         "./src/__generated__/perkImageURLs.json",
-        JSON.stringify(perkImages, null, 4),
+        JSON.stringify(sortedPerkImages, null, 4),
         (err) => {
             if (err) {
                 throw err;

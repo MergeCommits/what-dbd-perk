@@ -5,6 +5,15 @@
         "module": "Node16",
         "moduleResolution": "node16",
         "skipLibCheck": true,
-        "target": "esnext"
+        "target": "esnext",
+
+        "strict": true,
+        "allowUnreachableCode": false,
+        "exactOptionalPropertyTypes": false,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true
     }
 }

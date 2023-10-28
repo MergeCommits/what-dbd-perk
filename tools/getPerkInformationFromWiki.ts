@@ -67,10 +67,18 @@ async function writeAllPerkDescriptionsToFile() {
 
     await Promise.all(promises);
 
-    // write to json file
+    const sortedPerkDescriptions: Record<string, string> = {};
+
+    Object.keys(perkDescriptions)
+        .sort()
+        .forEach((key) => {
+            // @ts-expect-error key is a valid key
+            sortedPerkDescriptions[key] = perkDescriptions[key];
+        });
+
     writeFile(
         "./src/__generated__/perkDescriptions.json",
-        JSON.stringify(perkDescriptions, null, 4),
+        JSON.stringify(sortedPerkDescriptions, null, 4),
         (err) => {
             if (err) {
                 throw err;
