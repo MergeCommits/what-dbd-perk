@@ -19,7 +19,13 @@ const config = {
         defaultLocale: "en",
     },
     images: {
-        domains: ["static.wikia.nocookie.net"],
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "static.wikia.nocookie.net",
+                pathname: "/deadbydaylight_gamepedia_en/images/*",
+            },
+        ],
     },
 };
 export default config;

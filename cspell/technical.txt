@@ -1,8 +1,9 @@
 corepack
-tailwindcss
+gamepedia
 nextjs
+nocookie
+superjson
+tailwindcss
 tanstack
 trpc
-superjson
 wikia
-nocookie
