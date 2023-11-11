@@ -451,4 +451,16 @@ export const killerPerks = [
         name: "Ultimate Weapon",
         tags: "alien",
     },
+    {
+        name: "Hex: Two Can Play",
+        tags: "doll,person,face",
+    },
+    {
+        name: "Friends 'til the End",
+        tags: "doll,hook",
+    },
+    {
+        name: "Batteries Included",
+        tags: "battery,hand",
+    },
 ];

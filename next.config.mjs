@@ -23,7 +23,7 @@ const config = {
             {
                 protocol: "https",
                 hostname: "static.wikia.nocookie.net",
-                pathname: "/deadbydaylight_gamepedia_en/images/*",
+                pathname: "/deadbydaylight_gamepedia_en/images/**",
             },
         ],
     },
