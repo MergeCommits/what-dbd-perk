@@ -389,7 +389,7 @@ export const killerPerks = [
     },
     {
         name: "Shattered Hope",
-        tags: "hand",
+        tags: "hand,totem",
     },
     {
         name: "Superior Anatomy",
