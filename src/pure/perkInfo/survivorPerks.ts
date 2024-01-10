@@ -526,4 +526,16 @@ export const survivorPerks = [
         name: "Lucky Star",
         tags: "person,face",
     },
+    {
+        name: "Champion of Light",
+        tags: "person,flashlight",
+    },
+    {
+        name: "Boon: Illumination",
+        tags: "eye",
+    },
+    {
+        name: "Deadline",
+        tags: "person,face,blood",
+    },
 ];
