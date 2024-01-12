@@ -3,6 +3,7 @@ const peopleTags = ["person", "people"];
 export const synonymTags = [
     peopleTags,
     ["foot", "feet", "boot", "shoe"],
+    ["hand", "fist"],
     ["syringe", "injection", "needle"],
     ["pointing", "finger"],
     ["plant", "flower", "nature"],
