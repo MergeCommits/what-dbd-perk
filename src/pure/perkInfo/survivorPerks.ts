@@ -51,7 +51,7 @@ export const survivorPerks = [
     },
     {
         name: "Resilience",
-        tags: "person,fist",
+        tags: "person,head,fist",
     },
     {
         name: "Self-Aware",
