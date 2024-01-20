@@ -30,6 +30,7 @@ export const synonymTags = [
     ["box", "crate"],
     ["alien", "creature", "xenomorph"],
     ["battery", "item"],
+    ["bat", "baseball bat", "weapon", "tool"],
 ];
 
 export const getSynonyms = (tags: string[]) => {

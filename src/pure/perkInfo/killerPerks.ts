@@ -4,22 +4,12 @@ export const killerPerks = [
         tags: "hand,grab",
     },
     {
-        name: "Claustrophobia",
-        perkNameInImageFilename: "cruelLimits",
-        tags: "person,cage",
-    },
-    {
         name: "Deerstalker",
         tags: "face,deer",
     },
     {
         name: "Distressing",
         tags: "heart",
-    },
-    {
-        name: "Fearmonger",
-        perkNameInImageFilename: "mindbreaker",
-        tags: "person",
     },
     {
         name: "Hex: No One Escapes Death",
@@ -36,11 +26,6 @@ export const killerPerks = [
     {
         name: "Iron Grasp",
         tags: "hand,grab",
-    },
-    {
-        name: "Jolt",
-        perkNameInImageFilename: "surge",
-        tags: "generator,broken",
     },
     {
         name: "Scourge Hook: Monstrous Shrine",
@@ -253,6 +238,18 @@ export const killerPerks = [
     {
         name: "Furtive Chase",
         tags: "hook",
+    },
+    {
+        name: "Surge",
+        tags: "generator,broken",
+    },
+    {
+        name: "Mindbreaker",
+        tags: "person",
+    },
+    {
+        name: "Cruel Limits",
+        tags: "person,cage",
     },
     {
         name: "Zanshin Tactics",

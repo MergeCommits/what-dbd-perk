@@ -9,25 +9,12 @@ export const survivorPerks = [
         tags: "eye,spiral",
     },
     {
-        name: "Guardian",
-        tags: "person,running",
-    },
-    {
         name: "Hope",
         tags: "wings",
     },
     {
-        name: "Inner Healing",
-        tags: "person,hood",
-    },
-    {
         name: "Kindred",
         tags: "eye,hook",
-    },
-    {
-        name: "Kinship",
-        perkNameInImageFilename: "camaraderie",
-        tags: "hook",
     },
     {
         name: "Lightweight",
@@ -46,21 +33,8 @@ export const survivorPerks = [
         tags: "person,auditory",
     },
     {
-        name: "Renewal",
-        tags: "person,injury,crouch",
-    },
-    {
         name: "Resilience",
         tags: "person,head,fist",
-    },
-    {
-        name: "Self-Aware",
-        perkNameInImageFilename: "fixated",
-        tags: "feet,scratch marks",
-    },
-    {
-        name: "Situational Awareness",
-        tags: "person",
     },
     {
         name: "Slippery Meat",
@@ -285,6 +259,30 @@ export const survivorPerks = [
     {
         name: "Mettle of Man",
         tags: "hand,fist",
+    },
+    {
+        name: "Better Together",
+        tags: "person",
+    },
+    {
+        name: "Fixated",
+        tags: "feet,scratch marks",
+    },
+    {
+        name: "Inner Strength",
+        tags: "person,hood",
+    },
+    {
+        name: "Babysitter",
+        tags: "person,sunglasses,bat",
+    },
+    {
+        name: "Camaraderie",
+        tags: "hook",
+    },
+    {
+        name: "Second Wind",
+        tags: "person,injury,crouch,bat",
     },
     {
         name: "Lucky Break",
