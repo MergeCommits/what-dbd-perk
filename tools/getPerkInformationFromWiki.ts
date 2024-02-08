@@ -6,15 +6,18 @@ import { killerPerks } from "../src/pure/perkInfo/killerPerks";
 import { survivorPerks } from "../src/pure/perkInfo/survivorPerks";
 
 const websitePath = "https://deadbydaylight.fandom.com/wiki";
+const perkDescriptionClassName = "perkDesc";
 
 async function getPerkDescriptionFromWiki(name: string) {
     const perkURL = `${websitePath}/${name.replaceAll(" ", "_")}`;
     const body = (await axios.get<string>(perkURL)).data;
-    const perkDescription = parse(body).querySelector(".formattedPerkDesc");
+    const perkDescription = parse(body).querySelector(
+        `.${perkDescriptionClassName}`
+    );
 
     if (perkDescription === null) {
         throw Error(
-            `Could not locate description for "${name}" at url "${perkURL}"`
+            `Could not locate element "${perkDescriptionClassName}" for "${name}" at url "${perkURL}"`
         );
     }
 
@@ -34,11 +37,10 @@ function sanitizePerkDescription(description: HTMLElement) {
         .querySelectorAll("span:not([class])")
         // The wiki sometimes forgets to add spaces between words when there is an image between them, so add them in when needed.
         .forEach((span) => {
-            // The typing for previousSibling and nextSibling is wrong and doesn't show that they're nullable.
-            // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
             if (span.previousSibling === null || span.nextSibling === null) {
                 return;
             }
+
             const textBefore = span.previousSibling.text;
             const textAfter = span.nextSibling.text;
             const needsSpace =
