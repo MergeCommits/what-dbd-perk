@@ -31,7 +31,7 @@ function sanitizePerkDescription(description: HTMLElement) {
     description.querySelectorAll("a").forEach((e) => e.replaceWith(e.text));
     description
         .querySelectorAll("ul")
-        .forEach((e) => e.setAttribute("class", "list-disc ml-4"));
+        .forEach((e) => e.setAttribute("class", "list-disc mt-1.5 mb-4 ml-9"));
 
     description
         .querySelectorAll("span:not([class])")

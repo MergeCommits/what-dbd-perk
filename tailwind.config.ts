@@ -9,5 +9,6 @@ export default {
             },
         },
     },
+    safelist: ["list-disc", "mt-1.5", "mb-4", "ml-9"],
     plugins: [],
 } satisfies Config;
